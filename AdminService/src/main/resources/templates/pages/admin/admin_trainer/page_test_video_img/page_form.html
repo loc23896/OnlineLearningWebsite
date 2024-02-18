@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Form</title>
+</head>
+<body>
+    <form th:action="@{/video/form}" th:object="${videoDto}" enctype="multipart/form-data" method="post">
+        <div>
+            <hr>
+            <input th:field="*{name}" type="text">
+            <div class="mb-3">
+                <h3>Choose Video </h3>
+                <input name="video" type="file">
+            </div>
+            <hr>
+        </div>
+        <hr>
+        <div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </form>
+
+    <hr>
+<h3>Latest Video</h3>
+    <ul th:each=" list : ${videos}">
+        <li><p th:text="${list.name}"></p></li>
+        <li>
+            <video controls width="640" height="360">
+            <source th:src="@{'/api/videos/' + ${list.id}}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        </li>
+    </ul>
+
+
+
+</body>
+</html>
