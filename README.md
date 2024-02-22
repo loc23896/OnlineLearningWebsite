@@ -39,6 +39,8 @@ designing and synthesizing the database, and building API service and Admin serv
 - Admin Service: Constructing code framework to connect to the API Service, writing and designing the frontend.
 - Developing CRUD operations for courses, lessons, and quizzes.
 - For lessons: adding videos, images, and quizzes for each lesson. Quizzes can be imported from Excel files and downloaded as Excel templates.
+- http://localhost:9091/admin (This is the Admin page) user: admin , password: admin.
+- http://localhost:9091/adminTrainer/index
 
 <h1>Result</h1>
 
